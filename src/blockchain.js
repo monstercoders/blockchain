@@ -98,3 +98,12 @@ const isChainValid = candidateChain => {
     }
     return true;
 };
+
+const addBlockToChain = candidateBlock => {
+    if(isNewBlockValid(candidateBlock, getLastBlock())) {
+        blockchain.push(candidateBlock);
+        return true;
+    } else {
+        return false;
+    }
+};
